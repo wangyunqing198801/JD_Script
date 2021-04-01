@@ -10,7 +10,7 @@ on:
     watch:
         types: [started]
     repository_dispatch:
-        types: d_carnivalcity.js
+        types: jd_carnivalcity.js
 
 jobs:
     build:
@@ -27,7 +27,7 @@ jobs:
                   npm install
             - name: "运行 【手机狂欢城】"
               run: |
-                  node d_carnivalcity.js
+                  node jd_carnivalcity.js
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ github.event.client_payload.JD_DEBUG || secrets.JD_DEBUG }}
