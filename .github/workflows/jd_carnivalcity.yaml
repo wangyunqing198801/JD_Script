@@ -6,11 +6,11 @@ name: 京豆昨日收益
 on:
     workflow_dispatch:
     schedule:
-        - cron: "0 23 * * *"
+        - cron: "0 4,10,16,22 * * *"
     watch:
         types: [started]
     repository_dispatch:
-        types: jd_bean_change
+        types: jd_carnivalcity
 
 jobs:
     build:
@@ -25,9 +25,9 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【京豆昨日收益】"
+            - name: "运行 【手机狂欢城】"
               run: |
-                  node jd_bean_change.js
+                  node jd_carnivalcity.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ secrets.JD_DEBUG }}
