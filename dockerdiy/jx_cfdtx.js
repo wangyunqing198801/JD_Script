@@ -13,7 +13,8 @@
 
 *
 **/
-
+// 京喜财富岛提现
+0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js, tag=京喜财富岛提现, enabled=true
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
