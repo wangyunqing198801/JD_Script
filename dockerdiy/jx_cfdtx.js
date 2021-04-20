@@ -11,10 +11,11 @@
   获取Token方式：
   打开【❗️京喜农场❗️】，手动任意完成<工厂任务>、<签到任务>、<金牌厂长任务>一项，提示获取cookie成功即可，然后退出跑任务脚本
 
+# 京喜财富岛提现
+0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js, tag=京喜财富岛提现, enabled=true
 *
 **/
-// 京喜财富岛提现
-0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js, tag=京喜财富岛提现, enabled=true
+
 const $ = new Env("京喜财富岛提现");
 const JD_API_HOST = "https://m.jingxi.com/";
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
