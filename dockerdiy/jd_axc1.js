@@ -30,8 +30,12 @@ let exchangeName = $.isNode() ? (process.env.EXCHANGE_EC ? process.env.EXCHANGE_
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let inviteCodes = [
-  '2599703@2757654@2586018@1556311@2583822@2585256',
-  '2599703@2757654@2586018@1556311@2583822@2585256',
+  '1925308@3765565@3785599@4635113@4635152@4635177',
+  '1925308@3765565@3785599@4635113@4635152@4635177',
+  '1925308@3765565@3785599@4635113@4635152@4635177',
+  '1925308@3765565@3785599@4635113@4635152@4635177',
+  '1925308@3765565@3785599@4635113@4635152@4635177',
+  '1925308@3765565@3785599@4635113@4635152@4635177'
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -74,12 +78,11 @@ function obj2param(obj) {
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
-      $.nickName = '';
       message = '';
       await TotalBean();
-      console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      console.log(`\n******开始【京东账号${$.index}】${$.UserName}*********\n`);
       if (!$.isLogin) {
-        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
+        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
         } else {
@@ -849,7 +852,6 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
           } else {
             console.log(`京东服务器返回空数据`)
           }
