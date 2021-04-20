@@ -1,5 +1,5 @@
 
-#joy总动员
+// joy总动员
 30 10 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jd_friend.js, tag=joy总动员, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/shylocks/jd_xxl.jpg, enabled=true
 
 const $ = new Env('joy总动员');
