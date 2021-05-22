@@ -10,7 +10,11 @@
  * 手动任意完成，提示获取cookie成功即可，然后退出跑任务脚本
 
 # 京喜财富岛提现
-0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js, tag=京喜财富岛提现, enabled=true
+0 0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js, tag=京喜财富岛提现, enabled=true
+[task_local]
+0 0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js
+[Script]
+cron "0 0 * * *" script-path=https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jx_cfdtx.js,tag=京喜财富岛提现
 
   hostname = wq.jd.com, m.jingxi.com
 
