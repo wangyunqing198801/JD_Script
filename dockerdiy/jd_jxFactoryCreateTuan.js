@@ -1,13 +1,29 @@
 /*
 京东京喜工厂自动开团
+更新时间：2021-5-31
+活动入口：京东APP-游戏与互动-查看更多-京喜工厂
+或者: 京东APP首页搜索 "玩一玩" ,造物工厂即可
+已支持IOS双京东账号,Node.js支持N个京东账号
+脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
+============Quantumultx===============
+[task_local]
+#京喜工厂
+10 * * * * https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jd_jxFactoryCreateTuan.js, tag=京喜工厂开团, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
+================Loon==============
+[Script]
+cron "10 * * * *" script-path=https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jd_jxFactoryCreateTuan.js,tag=京喜工厂开团
+===============Surge=================
+京喜工厂 = type=cron,cronexp="10 * * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jd_jxFactoryCreateTuan.js
+============小火箭=========
+京喜工厂 = type=cron,script-path=https://raw.githubusercontent.com/Shineslee/JD_Script/master/dockerdiy/jd_jxFactoryCreateTuan.js, cronexpr="10 * * * *", timeout=3600, enable=true
  */
 const exec = require('child_process').execSync
 const $ = new Env('京东京喜工厂自动开团');
 const JD_API_HOST = 'https://m.jingxi.com';
 const fs = require('fs');
 const notify = $.isNode() ? require('./sendNotify') : '';
-let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const tuanActiveId = `X3vrsg9SABO2P_zyeiqJSw==`;
+let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
+const tuanActiveId = `P6Nwt8wkOa-cyMNFcmhNZw==`;
 let cookiesArr = [], cookie = '', message = '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 Object.keys(jdCookieNode).forEach((item) => {
