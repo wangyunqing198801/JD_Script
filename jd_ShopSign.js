@@ -1,6 +1,12 @@
 /*
 店铺签到，各类店铺签到，有新的店铺直接添加token即可
 搬运cui521大佬脚本，请勿外传！！！
+[task_local]
+#interCenter渠道店铺签到
+0 0 * * * https://raw.githubusercontent.com/Shineslee/JD_Script/edit/master/jd_ShopSign.js, tag=interCenter渠道店铺签到,  enabled=true
+[rerwite_local]
+#interCenter渠道店铺签到
+(interact_center_shopSign_getActivityInfo) url script-request-header https://raw.githubusercontent.com/Shineslee/JD_Script/edit/master/jd_ShopSign.js
 */
 const $ = new Env('店铺签到');
 
