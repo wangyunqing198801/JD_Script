@@ -23,10 +23,6 @@ let num=0
 let shopname=''
 const token=[
    'F999699AF3429AA2F83B1B66A2933178',
-   '1176143851634A8A69D6AB8C0B677247',
-   '712C6A3BF636C3D9A60D9FFC93836E7E',
-   '3754B9A3985AC58B8845601D12E2186B',//4.1日添加6天2  13天5
-   'E75C142403C71C7A8A4CB8BCF761CFB9',//4.1日添加3天3 7天5'
    '7AF00F9CABCBCB22F21AD2B80B37A138'
 ]
 //IOS等用户直接用NobyDa的jd cookie
@@ -57,12 +53,11 @@ if ($.isNode()) {
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
       $.index = i + 1;
       $.isLogin = true;
-      $.nickName = '';
       message = '';
       await TotalBean();
-      console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      console.log(`\n******开始【京东账号${$.index}】${$.UserName}*********\n`);
       if (!$.isLogin) {
-        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
